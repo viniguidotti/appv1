@@ -133,7 +133,7 @@ class MyCustomFormState extends State<CorporateForm> {
                       child: Row(
                         children: [
                           Text(
-                            "Salvar e Continuar",
+                            "Salvar e continuar",
                             style: Theme.of(context)
                                 .textTheme
                                 .button
