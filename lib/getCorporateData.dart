@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'constants.dart';
 
 class CorporateForm extends StatefulWidget {
@@ -14,6 +13,7 @@ class MyCustomFormState extends State<CorporateForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('LENC - Coleta de Dados'),
       ),

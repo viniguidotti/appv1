@@ -1,5 +1,7 @@
 import 'package:appv1/constants.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'getCorporateData.dart';
 
@@ -41,8 +43,31 @@ class AcceptTerm extends StatelessWidget {
                   textAlign: TextAlign.center,
                   text: TextSpan(
                       text:
-                          "Antes de continuar você deve aceitar os Termos de Uso e Consentimento do questionário:",
+                          "Antes de continuar você deve aceitar os Termos de Uso e Consentimento do questionário: \n",
                       style: Theme.of(context).textTheme.headline5),
+                ),
+                Card(
+                  color: Colors.grey,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        RichText(
+                            textAlign: TextAlign.center,
+                            text: TextSpan(
+                              text:
+                                  "Clique para ver os Termos de Uso e Políticas de Privacidade",
+                              style: new TextStyle(
+                                  color: Colors.blue,
+                                  decoration: TextDecoration.underline),
+                              recognizer: new TapGestureRecognizer()
+                                ..onTap = () {
+                                  launch('https://www.google.com.br');
+                                },
+                            ))
+                      ],
+                    ),
+                  ),
                 ),
                 FittedBox(
                   child: GestureDetector(
