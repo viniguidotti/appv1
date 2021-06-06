@@ -1,39 +1,18 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
-import 'process_questions.dart';
+import 'process_graphic.dart';
 
-class CorporateForm extends StatefulWidget {
-  @override
-  MyCustomFormState createState() {
-    return MyCustomFormState();
-  }
-}
-
-class MyCustomFormState extends State<CorporateForm> {
+class TechnologyQuestions extends StatelessWidget {
   var _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('LENC - Coleta de Dados'),
+        title: Text('Questionário - Tecnologia'),
       ),
       body: Column(
         children: [
-          Expanded(
-            flex: 30,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Container(
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("images/logo_invert.jpg"))),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 16,
-          ),
           Form(
             key: _formKey,
             child: Column(
@@ -41,12 +20,12 @@ class MyCustomFormState extends State<CorporateForm> {
                 TextFormField(
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
-                    hintText: "Seu Nome",
-                    labelText: "Nome",
+                    hintText: "Sim ou Não",
+                    labelText:
+                        "Existe procedimentos para anonimização de dados?",
                     hintStyle: TextStyle(color: Colors.white),
-                    labelStyle: TextStyle(color: Colors.yellow, fontSize: 24),
+                    labelStyle: TextStyle(color: Colors.yellow, fontSize: 12),
                     border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.person_pin_circle),
                     fillColor: Colors.black12,
                     filled: true,
                   ),
@@ -57,16 +36,15 @@ class MyCustomFormState extends State<CorporateForm> {
                 TextFormField(
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
-                    hintText: "Seu E-mail",
-                    labelText: "E-mail",
+                    hintText: "Sim ou Não",
+                    labelText:
+                        "A sua empresa sofreu algum incidente relacionado a proteção de dados?",
                     hintStyle: TextStyle(color: Colors.white),
-                    labelStyle: TextStyle(color: Colors.yellow, fontSize: 24),
+                    labelStyle: TextStyle(color: Colors.yellow, fontSize: 12),
                     border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.email),
                     fillColor: Colors.black12,
                     filled: true,
                   ),
-                  keyboardType: TextInputType.emailAddress,
                 ),
                 SizedBox(
                   height: 10,
@@ -74,30 +52,15 @@ class MyCustomFormState extends State<CorporateForm> {
                 TextFormField(
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
-                    hintText: "Seu Telefone",
-                    labelText: "Telefone",
+                    hintText: "Sim ou Não",
+                    labelText:
+                        "Existem tecnologias relacionadas a segurança da informação? (Ex: Firewall, antivírus e WAF)",
                     hintStyle: TextStyle(color: Colors.white),
-                    labelStyle: TextStyle(color: Colors.yellow, fontSize: 24),
+                    labelStyle: TextStyle(color: Colors.yellow, fontSize: 12),
                     border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.email),
                     fillColor: Colors.black12,
                     filled: true,
                   ),
-                  keyboardType: TextInputType.phone,
-                ),
-                TextFormField(
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hintText: "Nome da Empresa",
-                    labelText: "Empresa",
-                    hintStyle: TextStyle(color: Colors.white),
-                    labelStyle: TextStyle(color: Colors.yellow, fontSize: 24),
-                    border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.apartment),
-                    fillColor: Colors.black12,
-                    filled: true,
-                  ),
-                  keyboardType: TextInputType.name,
                 ),
                 SizedBox(
                   height: 10,
@@ -105,23 +68,25 @@ class MyCustomFormState extends State<CorporateForm> {
                 TextFormField(
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
-                    hintText: "Setor da Empresa",
-                    labelText: "Setor Empresarial",
+                    hintText: "Sim ou Não",
+                    labelText:
+                        "As aplicações já estão adequadas aos princípios de tratamento de dados pessoais??",
                     hintStyle: TextStyle(color: Colors.white),
-                    labelStyle: TextStyle(color: Colors.yellow, fontSize: 24),
+                    labelStyle: TextStyle(color: Colors.yellow, fontSize: 12),
                     border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.card_travel),
                     fillColor: Colors.black12,
                     filled: true,
                   ),
-                  keyboardType: TextInputType.name,
+                ),
+                SizedBox(
+                  height: 10,
                 ),
                 FittedBox(
                   child: GestureDetector(
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return ProcessQuestions();
+                        return Graphic();
                       }));
                     },
                     child: Container(
@@ -146,10 +111,9 @@ class MyCustomFormState extends State<CorporateForm> {
                     ),
                   ),
                 ),
-                SizedBox(width: 10),
               ],
             ),
-          ),
+          )
         ],
       ),
     );
