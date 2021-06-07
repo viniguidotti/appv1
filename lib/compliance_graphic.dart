@@ -3,10 +3,9 @@ import 'package:appv1/widgets/indicators_widget.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:appv1/constants.dart';
+import 'technology_graphic.dart';
 
-import 'compliance_graphic.dart';
-
-class ProcessGraphic extends StatefulWidget {
+class ComplianceGraphic extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => GraphicState();
 }
@@ -27,7 +26,7 @@ class GraphicState extends State {
               text: TextSpan(
                 children: [
                   TextSpan(
-                      text: "Gráfico enquadramento - Processos",
+                      text: "Gráfico enquadramento - Compliance",
                       style: Theme.of(context).textTheme.headline5),
                 ],
               ),
@@ -38,7 +37,7 @@ class GraphicState extends State {
                   borderData: FlBorderData(show: false),
                   sectionsSpace: 2,
                   centerSpaceRadius: 80,
-                  sections: getSectionsProcess(touchedIndex),
+                  sections: getSectionsCompliance(touchedIndex),
                 ),
               ),
             ),
@@ -47,7 +46,7 @@ class GraphicState extends State {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(15),
-                  child: IndicatorsWidgetProcess(),
+                  child: IndicatorsWidgetCompliance(),
                 ),
               ],
             ),
@@ -58,7 +57,7 @@ class GraphicState extends State {
               child: GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ComplianceGraphic();
+                    return TechnologyGraphic();
                   }));
                 },
                 child: Container(

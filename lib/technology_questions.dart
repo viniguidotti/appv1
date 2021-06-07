@@ -86,7 +86,7 @@ class TechnologyQuestions extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return Graphic();
+                        return ProcessGraphic();
                       }));
                     },
                     child: Container(
